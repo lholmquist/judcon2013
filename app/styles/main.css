@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+canvas {
+    background: #EEE
+}
+
+.container-fluid {
+    margin:0;
+    padding:0;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 979px) {
+    .navbar-fixed-top: {
+        margin-bottom: 0;
+    }
+}
