@@ -18,15 +18,19 @@ var coolapp = {
     init: function() {
         var canvas = this.canvas,
             ctx = this.ctx;
-        canvas.height = 450;
-        canvas.width = 768;
-        ctx.lineWidth = 20;
-        ctx.lineCap = 'round';
+
+        this.doCanvasStuff( canvas, ctx );
 
         ctx.translate( -this.originX, -this.originY );
 
         this.initListeners();
         this.initPicker();
+    },
+    doCanvasStuff: function( canvas, ctx ) {
+        canvas.height = ( window.innerHeight - 75 );
+        canvas.width = ( window.innerWidth - 15 );
+        ctx.lineWidth = 20;
+        ctx.lineCap = 'round';
     },
     initListeners: function() {
         var canvas = this.canvas;
@@ -37,6 +41,7 @@ var coolapp = {
 
         $( "#reset" ).on( "touchend", this.reset );
         $( "a" ).on( "click", this.navigate );
+        $( window ).on( "orientationchange", this.orient );
     },
     initPicker: function() {
         var picker = this.picker,
@@ -52,6 +57,9 @@ var coolapp = {
         }
 
         currentColor = colors[ 5 ];
+    },
+    orient: function() {
+        coolapp.doCanvasStuff( coolapp.canvas, coolapp.ctx );
     },
     touchstart: function( event ) {
         event.preventDefault();
@@ -116,6 +124,6 @@ var coolapp = {
     },
     reset: function() {
         var ctx = coolapp.ctx;
-        ctx.clearRect(0,0, 768, 500);
+        ctx.clearRect(0,0, document.width, document.height);
     }
 };
