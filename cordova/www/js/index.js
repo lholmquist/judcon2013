@@ -8,7 +8,20 @@ var cordovaApp = {
     deviceready: function() {
         $( "a[href='#contact']" ).on( "click", cordovaApp.loadContacts );
         $( "a[href='#photos']" ).on( "click", cordovaApp.loadPhotos );
+        $( "a[href='#save']" ).on( "click", cordovaApp.saveCanvasImage );
         coolapp.init();
+    },
+    saveCanvasImage: function() {
+        var canvas2ImagePlugin = window.plugins.canvas2ImagePlugin;
+        canvas2ImagePlugin.saveImageDataToLibrary(
+            function(msg){
+                console.log(msg);
+            },
+            function(err){
+                console.log(err);
+            },
+            'canvas'
+        );
     },
     loadPhotos: function() {
          //lets empty the photo div first
