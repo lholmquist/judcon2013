@@ -28,7 +28,7 @@ var coolapp = {
     },
     doCanvasStuff: function( canvas, ctx ) {
         canvas.height = ( window.innerHeight - 75 );
-        canvas.width = ( window.innerWidth - 15 );
+        canvas.width = ( window.innerWidth );
         ctx.lineWidth = 20;
         ctx.lineCap = 'round';
     },
