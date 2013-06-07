@@ -7,7 +7,38 @@ var cordovaApp = {
     },
     deviceready: function() {
         $( "a[href='#contact']" ).on( "click", cordovaApp.loadContacts );
+        $( "a[href='#photos']" ).on( "click", cordovaApp.loadPhotos );
         coolapp.init();
+    },
+    loadPhotos: function() {
+         //lets empty the photo div first
+        $( "#photoList div" ).empty();
+        var cameraOptions = {
+            quality: 50,
+            sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+            targetWidth: window.innerWidth,
+            targetHeight: ( window.innerHeight - 20 ),
+        },
+        success,
+        error;
+
+
+        success = function( picture ) {
+            console.log( picture );
+            var photoDiv = $( "<div>" ),
+                img = new Image();
+
+            img.src = picture;
+
+            $( photoDiv ).append( img );
+            $( "#photoList" ).append( photoDiv );
+        };
+
+        error = function( error ) {
+            console.log( error );
+        };
+
+        navigator.camera.getPicture( success, error, cameraOptions );
     },
     loadContacts: function() {
 
