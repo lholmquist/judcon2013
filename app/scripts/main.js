@@ -114,5 +114,3 @@ var coolapp = {
         ctx.clearRect(0,0, 768, 500);
     }
 };
-
-coolapp.init();
