@@ -18,8 +18,8 @@ var coolapp = {
     init: function() {
         var canvas = this.canvas,
             ctx = this.ctx;
-        canvas.height = 400;
-        canvas.width = 735;
+        canvas.height = 450;
+        canvas.width = 768;
         ctx.lineWidth = 20;
         ctx.lineCap = 'round';
 
@@ -111,7 +111,7 @@ var coolapp = {
     },
     reset: function() {
         var ctx = coolapp.ctx;
-        ctx.clearRect(0, 0, coolapp.canvas.width, coolapp.canvas.height);
+        ctx.clearRect(0,0, 768, 500);
     }
 };
 
