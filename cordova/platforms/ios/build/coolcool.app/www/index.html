@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name = "format-detection" content = "telephone=no"/>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width;" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello Cordova</title>
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+              <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="#">Super Cool Awesome</a><button id="reset" class="btn">Reset</button>
+                <div class="nav-collapse collapse">
+                  <ul class="nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#contact">Contacts</a></li>
+                    <li><a href="#photos">Photos</a></li>
+                  </ul>
+                </div><!--/.nav-collapse -->
+              </div>
+            </div>
+        </div>
+
+
+    <div class="container-fluid" id="mainCanvas">
+        <div class="row-fluid">
+          <div class="span12">
+            <!--Body content-->
+            <canvas id="canvas"></canvas>
+          </div>
+        </div>
+    </div>
+    <div class="container-fluid hidden" id="contactsList">
+        This is the Contacts Page
+    </div> <!-- /container -->
+    <div class="container-fluid hidden" id="photoList">
+        This is the Photo Page
+    </div> <!-- /container -->
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- build:js scripts/main.js -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/bootstrap/docs/assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script src="scripts/main.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        <!-- endbuild -->
+    </body>
+</html>

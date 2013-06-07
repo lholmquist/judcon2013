@@ -19,7 +19,8 @@ module.exports = function (grunt) {
     // configurable paths
     var yeomanConfig = {
         app: 'app',
-        dist: 'dist'
+        dist: 'dist',
+        cordova: './cordova/www/'
     };
 
     grunt.initConfig({
@@ -274,6 +275,14 @@ module.exports = function (grunt) {
                     src: [
                         'generated/*'
                     ]
+                }]
+            },
+            cordova: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>',
+                    dest: '<%= yeoman.cordova %>',
+                    src: [ "**", "!index.html", "!**/*.txt", "!**/index.js" ]
                 }]
             }
         },
