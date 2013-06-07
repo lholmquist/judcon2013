@@ -103,6 +103,11 @@ var coolapp = {
             $( "div[id!='contactsList'][class^='container-fluid']" ).addClass( "hidden" );
             break;
         case "#photos":
+            $( "#photoList" ).removeClass( "hidden" );
+            $( "div[id!='photoList'][class^='container-fluid']" ).addClass( "hidden" );
+            break;
+        case "#reset":
+            coolapp.reset();
             break;
         default:
         }

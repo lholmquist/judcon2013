@@ -10,42 +10,18 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="bower_components/bootstrap/docs/assets/css/bootstrap.css">
-        <link rel="stylesheet" href="bower_components/bootstrap/docs/assets/css/bootstrap-responsive.css">
         <link rel="stylesheet" href="styles/main.css">
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
     </head>
     <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-              <div class="container">
-                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a class="brand" href="#">Super Cool Awesome</a><button id="reset" class="btn">Reset</button>
-                <div class="nav-collapse collapse">
-                  <ul class="nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#contact">Contacts</a></li>
-                    <li><a href="#photos">Photos</a></li>
-                  </ul>
-                </div><!--/.nav-collapse -->
-              </div>
-            </div>
-        </div>
-
-
+        <a href="#">Home</a>
+        <a href="#contact">Contacts</a>
+        <a href="#photos">Photos</a>
     <div class="container-fluid" id="mainCanvas">
-        <div class="row-fluid">
-          <div class="span12">
-            <!--Body content-->
-            <canvas id="canvas"></canvas>
-          </div>
-        </div>
+        <canvas id="canvas"></canvas>
+        <a href="#reset">Reset</a>
     </div>
     <div class="container-fluid hidden" id="contactsList">
         This is the Contacts Page
@@ -59,7 +35,6 @@
 
         <!-- build:js scripts/main.js -->
         <script src="bower_components/jquery/jquery.js"></script>
-        <script src="bower_components/bootstrap/docs/assets/js/bootstrap.min.js"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/index.js"></script>
         <!-- endbuild -->
