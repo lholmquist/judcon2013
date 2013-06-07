@@ -302,6 +302,17 @@ module.exports = function (grunt) {
                 'svgmin',
                 'htmlmin'
             ]
+        },
+        shell: {
+            cordovaPrepare: {
+                command: 'cordova prepare ios',
+                options: {
+                    stdout: true,
+                    execOptions: {
+                        cwd: '<%= yeoman.cordova %>'
+                    }
+                }
+            }
         }
     });
 
@@ -334,6 +345,7 @@ module.exports = function (grunt) {
         'concat',
         'uglify',
         'copy',
+        'shell',
         'rev',
         'usemin'
     ]);
@@ -342,5 +354,12 @@ module.exports = function (grunt) {
         'jshint',
         'test',
         'build'
+    ]);
+
+    grunt.registerTask('cordova', [
+        'jshint',
+        'test',
+        'copy:cordova',
+        'shell:cordovaPrepare',
     ]);
 };
