@@ -9,6 +9,7 @@ var cordovaApp = {
         $( "a[href='#contact']" ).on( "click", cordovaApp.loadContacts );
         $( "a[href='#photos']" ).on( "click", cordovaApp.loadPhotos );
         $( "a[href='#save']" ).on( "click", cordovaApp.saveCanvasImage );
+        $( "a[href='#fun']" ).on( "click", cordovaApp.funfun );
         coolapp.init();
     },
     saveCanvasImage: function() {
@@ -86,5 +87,39 @@ var cordovaApp = {
         };
 
         navigator.contacts.find(fields, success, error, options);
+    },
+    funfun: function() {
+        var realmStatusPipe = AeroGear.Pipeline({
+            name: "realmStatus",
+            settings: {
+                baseURL: "http://us.battle.net/api/wow/",
+                endpoint: "realm/status"
+            }
+        }).pipes.realmStatus;
+
+        realmStatusPipe.read( {
+            success:function( data ) {
+
+                $( "#funList div" ).empty();
+                var i=0,
+                funDiv = $( "<div>" ),
+                ul = $( "<ul>" ),
+                li;
+
+                for( i; i < data.realms.length; i++ ) {
+                    li = $( "<li>" + data.realms[ i ].name + "   " + data.realms[ i ].status + "</li>" );
+                    ul.append( li );
+                }
+
+                funDiv.append( ul );
+                $( "#funList" ).append( funDiv );
+            },
+            error:function( data ) {
+                console.log( data );
+            }//,
+            //jsonp: {
+            //    callback: "jsonp"
+            //} //set to true to use jsonp , DUH
+        });
     }
 };

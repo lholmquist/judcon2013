@@ -117,7 +117,6 @@ var coolapp = {
         case "#fun":
             $( "#funList" ).removeClass( "hidden" );
             $( "div[id!='funList'][class^='container-fluid']" ).addClass( "hidden" );
-            coolapp.funfun();
             break;
         case "#reset":
             coolapp.reset();
@@ -129,39 +128,5 @@ var coolapp = {
     reset: function() {
         var ctx = coolapp.ctx;
         ctx.clearRect(0,0, document.width, document.height);
-    },
-    funfun: function() {
-        var realmStatusPipe = AeroGear.Pipeline({
-            name: "realmStatus",
-            settings: {
-                baseURL: "http://us.battle.net/api/wow/",
-                endpoint: "realm/status"
-            }
-        }).pipes.realmStatus;
-
-        realmStatusPipe.read( {
-            success:function( data ) {
-
-                $( "#funList div" ).empty();
-                var i=0,
-                funDiv = $( "<div>" ),
-                ul = $( "<ul>" ),
-                li;
-
-                for( i; i < data.realms.length; i++ ) {
-                    li = $( "<li>" + data.realms[ i ].name + "   " + data.realms[ i ].status + "</li>" );
-                    ul.append( li );
-                }
-
-                funDiv.append( ul );
-                $( "#funList" ).append( funDiv );
-            },
-            error:function( data ) {
-                console.log( data );
-            }//,
-            //jsonp: {
-            //    callback: "jsonp"
-            //} //set to true to use jsonp , DUH
-        });
     }
 };
