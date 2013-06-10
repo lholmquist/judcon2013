@@ -42,6 +42,10 @@ var cordovaApp = {
             var photoDiv = $( "<div>" ),
                 img = new Image();
 
+            img.onload = function() {
+                coolapp.ctx.drawImage( img, coolapp.originX, coolapp.originY );
+            };
+
             img.src = picture;
 
             $( photoDiv ).append( img );
