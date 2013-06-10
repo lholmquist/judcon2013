@@ -19,6 +19,7 @@
     "smarttabs": true,
     "globals": {
         "$": true,
-        "coolapp": true
+        "coolapp": true,
+        "AeroGear": true
     }
 }

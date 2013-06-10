@@ -19,6 +19,7 @@
         <a href="#">Home</a>
         <a href="#contact">Contacts</a>
         <a href="#photos">Photos</a>
+        <a href="#fun">Fun Fun</a>
     <div class="container-fluid" id="mainCanvas">
         <canvas id="canvas"></canvas>
         <a href="#reset">Reset</a>
@@ -30,6 +31,9 @@
     <div class="container-fluid hidden" id="photoList">
         This is the Photo Page
     </div> <!-- /container -->
+    <div class="container-fluid hidden" id="funList">
+        This is the Fun Page
+    </div> <!-- /container -->
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -37,7 +41,8 @@
         <!-- build:js scripts/main.js -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="Canvas2ImagePlugin.js"></script>
-        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/jquery/jquery.min.js"></script>
+        <script src="bower_components/aerogear/aerogear.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script src="scripts/main.js"></script>
         <script type="text/javascript">
