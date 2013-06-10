@@ -63,8 +63,8 @@ var coolapp = {
     },
     touchstart: function( event ) {
         event.preventDefault();
-        var max=0,
-            min=5;
+        var max=5,
+            min=0;
 
         //get random color
         coolapp.currentColor = coolapp.colors[ Math.floor(Math.random() * (max - min + 1)) + min ];
